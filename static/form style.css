@@ -1,0 +1,58 @@
+body{
+    /* background-color: rgb(201, 240, 201); */
+    /* background-image: url("images/pngwing.com.png"); */
+    /* background-image: linear-gradient( to bottom right, rgb(179, 220, 240), rgb(27, 134, 180)); */
+    background:rgb(2,0,36) linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,102,238,1) 0%, rgba(0,228,255,1) 72%);
+    height: 100vh;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    /* opacity: 0.5; */
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.head{
+    color: rgb(77, 72, 72);
+}
+.form{
+    border:1px solid grey;
+    box-shadow: 20px 20px 20px 5px grey;
+    width: 32%;
+    align-items: center;
+    margin-top: 7%;
+    margin-left: 35%;
+    background: rgb(221, 237, 245);
+}
+.group{
+    /* margin-left: 20px; */
+    padding: 3px;
+}
+#label{
+    padding: 5px;
+}
+.a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.b{
+    display: flex;
+    align-items: center;
+}
+.c{
+    display: flex;
+    align-items: center;
+}
+/* button{
+    background-color: rgb(11, 76, 114);
+    padding: 10px;
+    width: 30px;
+    height: 32px;
+} */
+.btn{
+    padding: 10px;
+    margin: 13px;
+    border-radius: 5px;
+    height: 37px;
+    width: 77px;
+}

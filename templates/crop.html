@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{%block title%}Farm-Expert{%endblock%}
+{%block style%}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo&family=Kanit:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+
+    .box {
+        background: rgb(2, 0, 36) linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(26, 102, 238, 1) 0%, rgba(0, 228, 255, 1) 72%);
+        min-height: 65vh;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding-bottom: 50px;
+    }
+
+    .img {
+        border: solid white 8px;
+        border-radius: 10px;
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        max-width: 40%;
+    }
+
+    .img img {
+        width: 290px;
+        height: 190px;
+    }
+
+    .desc {
+        color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 55%;
+    }
+
+    .desc h1 {
+        color: rgb(255, 255, 255);
+        margin-bottom: 10px;
+        font-family: 'Heebo', sans-serif;
+        font-family: 'Kanit', sans-serif;
+        font-size: 40px;
+        font-weight: bolder;
+    }
+
+    .desc p {
+        font-weight: bolder;
+        font-size: 17px;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+
+    .black1 {
+        background-color: rgb(252, 252, 252);
+        min-height: 20vh;
+        width: 90%;
+        flex-wrap: wrap;
+        top: -30px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 5px 0px 30px 4px;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #body,
+    .card,
+    .card1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #body {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .card {
+        padding: 10px 0;
+    }
+
+    .card button,
+    .card button img {
+        border-radius: 100px;
+        margin-bottom: 5px;
+        background-color: transparent;
+        border-color: transparent;
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .card p {
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+    }
+
+    .card:hover {
+        transform: scale(1.08);
+    }
+
+    .black {
+        padding-top: 50px;
+        background-color: rgb(43, 42, 42);
+        width: 100%;
+        top: -50px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+{%endblock%}
+
+{%block body%}
+<div class="box">
+    <div class="desc">
+        <h1>{{cn[0]}}</h1>
+        <p>{{cd}}</p>
+    </div>
+    <div class="img"><img src="../static/{{ci[0]}}" alt=""></div>
+</div>
+<section class="center">
+    <div class="black1">
+        <div id="body"><h2>Nitrogen</h2><br>
+            <p>{{crop[1]}}</p>
+        </div>
+        <div id="body"><h2>Phosphorus</h2><br>
+            <p>{{crop[2]}}</p>
+        </div>
+        <div id="body"><h2>Potassium</h2><br>
+            <p>{{crop[3]}}</p>
+        </div>
+        <div id="body"><h2>Temperature</h2><br>
+            <p>{{crop[4]}}</p>
+        </div>
+        <div id="body"><h2>Humidity</h2><br>
+            <p>{{crop[5]}}</p>
+        </div>
+        <div id="body"><h2>Ph</h2><br>
+            <p>{{crop[6]}}</p>
+        </div>
+        <div id="body"><h2>Rainfall</h2><br>
+            <p>{{crop[7]}}</p>
+        </div>
+    </div>
+</section>
+<div class="black">
+    <form action="/nav" method="post">
+        <div class="card">
+            <button name="search" value="{{cn[1]}}"><img src="../static/{{ci[1]}}" alt=""></button>
+            <p>{{cn[1]}}</p>
+        </div>
+    </form>
+    <form action="/nav" method="post">
+        <div class="card">
+            <button name="search" value="{{cn[2]}}"><img src="../static/{{ci[2]}}" alt=""></button>
+            <p>{{cn[2]}}</p>
+        </div>
+    </form>
+    <form action="/nav" method="post">
+        <div class="card">
+            <button name="search" value="{{cn[3]}}"><img src="../static/{{ci[3]}}" alt=""></button>
+            <p>{{cn[3]}}</p>
+        </div>
+    </form>
+</div>
+{%endblock body%}

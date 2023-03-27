@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./static/farm.jpeg" type="image/x-icon">
+    <title>{% block title %}Document{%endblock%}</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        list-style:none;
+        transition: all 0.3s;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    .hide{
+        display: none;
+    }
+    /* navabr */
+    nav {
+        background-color: #202020;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 10px 0;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        position: sticky;
+        z-index: 100;
+        top: 0px;
+        transition: all 0.5s;
+    }
+    nav ul {
+        display: flex;
+        list-style: none;
+        /* width: 25%; */
+        justify-content: center;
+        line-height: 50px;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: aliceblue;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: aliceblue;
+        margin: 2px 10px;
+        transition: 0.2s;
+        font-family: 'Heebo', sans-serif;
+    }
+    .logo img{
+        margin-right: 10px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+        color: #0077ff;
+        border-bottom: 0.2rem solid #0077ff;
+        padding: 0.5rem 0;
+    }
+    .barr{
+        font-size: 0px;
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hide2{
+        display: flex;
+        transition: all 0.5s;
+    }
+    @media screen and (max-width: 568px){
+        nav{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }.nav{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }.barr{
+            color: aliceblue;
+            margin-right: 20px;
+            font-size: 20px;
+        }.logo{
+            margin-left: 20px;
+        }
+        .hide2{
+            display: none;
+        }.join{
+            width: 95vw !important;
+        }.join div{
+            font-size: 20px !important;
+        }
+    }body{
+        min-height: 90vh;
+    }
+    /* nav endl */
+    #form,footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }button:hover{
+        cursor: pointer;
+    }footer{
+        background-color: #202020;
+        color: aliceblue;
+    }#form input{
+        height: 35px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }#form button{
+        height: 35px;
+        left: -5px;
+        border-top-right-radius: 5px;
+        width: 80px;
+        border-bottom-right-radius: 5px;
+    }#form button:hover{
+        transform: scale(1.08);
+        color: aliceblue;
+        background-color: #03b149;
+    }.bdy{
+        min-height: 90vh !important;
+    }
+</style>
+{%block style%}
+{%endblock%}
+
+<body class="bdy">
+    <nav>
+        <div class="nav">
+            <a href="/" class="logo">
+                <img src="./static/farm.jpeg" alt="farm" style="width: 40px; height: 40px; border-radius: 30px;" />
+                <h4>Farm-Expert</h4>
+            </a>
+            <i class="fa-sharp fa-solid fa-bars barr"></i>
+        </div>
+        <form action="/nav" id="form" method="post">
+            <input type="text" name="search" placeholder="search for crop">
+            <button type="submit">Search</button>
+        </form>
+        <ul class="mobile hide2">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    {%block body%}{%endblock%}
+</body>
+{%block footer%}
+<footer>
+    © Copyright | all rights reserved
+</footer>
+{%endblock%}
+<script src="https://kit.fontawesome.com/e969017409.js" crossorigin="anonymous"></script>
+</html>

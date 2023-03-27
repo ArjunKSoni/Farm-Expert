@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{%block title%}Farm-Expert-soil{%endblock%}
+{%block body%}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+    body {
+        background: rgb(2, 0, 36) linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(26, 102, 238, 1) 0%, rgba(0, 228, 255, 1) 72%);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .main {
+        justify-content: space-around;
+        align-items: center;
+        padding: 10%;
+        margin-left: 22%;
+    }
+
+    h1 {
+        font-size: 85px;
+        margin: 2px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .form {
+        border: 1px solid #2f2f30;
+        border-radius: 100px;
+        width: 60%;
+        height: 65px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 16px;
+        font-weight: 500;
+        display: inline-block;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 0px 15px 30px;
+    }
+
+    .soil {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn {
+        /* position: relative; */
+        border: 0px solid black;
+        border-radius: 80px;
+        width: 24%;
+        height: 65px;
+        background: rgb(61, 61, 202);
+        color: wheat;
+        font-size: 17px;
+        padding: 0, 0;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="title">
+            <h1>Farm Expert</h1>
+            <p>Farm Expert is a site which helps farmers to grow their yield.</p>
+        </div>
+        <div class="form">
+            <form id="signup-form" action="/get_soil_info" method="get">
+                <div class="soil" maxlength="256">
+                    <p>To know the soil conditions for a crop</p>
+                    <button type="submit" value="Open Form" class="btn" name="soil">Open Form</button>
+                </div>
+            </form>
+        </div>
+        <div class="form">
+            <form id="signup-form" action="/get_crop_info" method="get">
+                <div class="soil" maxlength="256">
+                    <p>To know the crop for soil conditions</p>
+                    <button type="submit" value="Open Form" class="btn" name="soil">Open Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+{%endblock%}

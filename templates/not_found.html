@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{%block title%}Farm-Expert{%endblock%}
+{%block style%}
+<style>
+    .body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgb(227, 223, 218);
+        height: 87.6vh;
+    }h1{
+        font-size: 30px;
+    }.button{
+        padding: 5px 30px;
+        font-size: 15px;
+        font-weight: bolder;
+        border-color: transparent;
+        background-color: rgb(82, 239, 82);
+        border-radius: 10px;
+        margin-top: 10px;
+    }.button:hover{
+        transform: scale(1.2);
+    }
+</style>
+{%endblock%}
+{%block body%}
+    <section class="body">
+        <img src="../static/pngwing.com.png" alt="" height="200px" width="250px">
+        <h1>No Result Found</h1>
+        <a href="/"><button class="button">Continue</button></a>
+
+    </section>    
+{%endblock body%}

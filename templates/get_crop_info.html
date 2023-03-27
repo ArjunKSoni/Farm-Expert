@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{%block title%}Farm-Expert{%endblock%}
+{%block body%}
+    <form action="/get_crop_info" method="post">
+        <input type="number" name="N">
+        <input type="number" name="P">
+        <input type="number" name="K">
+        <input type="number" name="temperature">
+        <input type="number" name="humidity">
+        <input type="number" name="ph">
+        <input type="number" name="rainfall">
+        <button type="submit">submit</button>
+    </form>
+{%endblock body%}
